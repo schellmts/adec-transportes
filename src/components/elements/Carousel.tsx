@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Navbar from './Navbar';
 
 const slides = [
   {
@@ -43,6 +44,9 @@ export default function Carousel() {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
+      <div className='z-20 relative'>
+        <Navbar />
+      </div>
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -52,40 +56,39 @@ export default function Carousel() {
             backgroundImage: `url(${slide.image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            zIndex: 0
           }}
         >
-          <div className="absolute top-0 left-0 w-full h-full"></div>
         </div>
       ))}
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-light text-center px-4">
+      <div className="relative flex flex-col items-end justify-center h-full text-light text-end px-24 z-10">
         <div className="transition-all duration-700 ease-in-out transform" style={{ transform: `translateY(${current === 0 ? '0' : '20px'})`, opacity: current === 0 ? 1 : 0 }}>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
             {slides[current].title} <br /> {slides[current].subtitle}
           </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-2xl">
+          <p className="mt-4 text-[#f2f2f2] text-lg md:text-3xl font-medium">
             {slides[current].description}
           </p>
-          <button className="mt-8 px-8 py-3 bg-transparent border-2 border-white rounded-md text-lg font-semibold hover:bg-white hover:text-black transition-colors duration-300">
+          <button className="mt-8 px-8 py-3 bg-transparent cursor-pointer border-2 border-white rounded-md text-lg font-semibold hover:bg-white hover:text-black transition-colors duration-300">
             Agende seu Serviço
           </button>
         </div>
       </div>
 
-      <div className="absolute inset-0 flex items-center justify-between p-4 z-10">
-        <button
-          onClick={previousSlide}
-          className="p-2 text-white bg-black bg-opacity-30 rounded-full hover:bg-opacity-50 transition"
-        >
-          <ChevronLeft size={32} />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="p-2 text-white bg-black bg-opacity-30 rounded-full hover:bg-opacity-50 transition"
-        >
-          <ChevronRight size={32} />
-        </button>
-      </div>
+      <button
+        onClick={previousSlide}
+        className="absolute left-4 cursor-pointer top-1/2 -translate-y-1/2 z-20 p-2 text-white bg-black/30 rounded-full hover:bg-black/50 transition"
+      >
+        <ChevronLeft size={32} />
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 cursor-pointer top-1/2 -translate-y-1/2 z-20 p-2 text-white bg-black/30 rounded-full hover:bg-black/50 transition"
+      >
+        <ChevronRight size={32} />
+      </button>
 
       <div className="absolute bottom-10 left-0 right-0 z-10 flex justify-center gap-2">
         {slides.map((_, index) => (

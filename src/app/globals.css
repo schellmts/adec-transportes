@@ -9,5 +9,8 @@
 
 @theme {
   --color-light: #E2DCCA; 
-  --background-image-header: url('/Component 1.png')
+  --color-dark: #023146; 
+  --background-image-header: url('/Component 1.png');
+  --background-image-about: url('/about.png');
+  --font-montserrat: var(--font-montserrat), ui-sans-serif, system-ui;
 }
