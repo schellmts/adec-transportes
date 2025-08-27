@@ -1,20 +1,44 @@
-import React from 'react';
 // Importando os ícones que vamos usar
 import { FaWhatsapp, FaCalendarAlt } from 'react-icons/fa';
+import { useState, useEffect } from 'react'; // Não se esqueça de importar os hooks
 
 export default function Navbar() {
   const navLinks = [
     { name: 'HOME', href: '#' },
     { name: 'SOBRE NÓS', href: '#' },
     { name: 'FROTA', href: '#' },
+    { name: 'DESTINOS', href: '#' },
     { name: 'CONTATO', href: '#' },
-    { name: 'SERVIÇOS', href: '#' },
   ];
 
-  return (
-    <nav className='fixed top-0 left-0 w-full flex items-center justify-between px-20 text-light z-50'>
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
+    <nav
+      className={`
+        fixed top-0 left-0 w-full flex items-center justify-between px-20 text-light z-50
+        transition-colors duration-300 ease-in-out
+        ${isScrolled ? 'bg-dark backdrop-blur-lg' : ''}
+      `}
+    >
+      {/* O resto do seu código permanece exatamente o mesmo */}
       <img src="/logo.png" alt="Adec Transporte Executivo Logo" className=" p-5 w-auto" />
+
       <div className='flex items-center gap-8'>
         <ul className='hidden md:flex items-center gap-8'>
           {navLinks.map((link) => (
@@ -54,8 +78,6 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-
-
     </nav>
   );
 }
