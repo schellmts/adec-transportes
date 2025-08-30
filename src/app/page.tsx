@@ -2,6 +2,7 @@ import CarouselHeader from "@/components/elements/Carousel";
 import Navbar from "@/components/elements/Navbar";
 import { NavbarMobile } from "@/components/elements/NavbarMobile";
 import About from "@/components/resources/About";
+import Cars from "@/components/resources/Cars";
 import Choose from "@/components/resources/Choose";
 import Services from "@/components/resources/Services";
 import {
@@ -21,6 +22,7 @@ export default function Home() {
         <About />
         <Services />
         <Choose />
+        <Cars />
       </div>
     </div>
   );

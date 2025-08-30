@@ -1,6 +1,6 @@
 // Importando os ícones que vamos usar
 import { FaWhatsapp, FaCalendarAlt } from 'react-icons/fa';
-import { useState, useEffect } from 'react'; // Não se esqueça de importar os hooks
+import { useState, useEffect } from 'react';
 
 export default function Navbar() {
   const navLinks = [
@@ -33,10 +33,9 @@ export default function Navbar() {
       className={`
         fixed top-0 left-0 w-full flex items-center justify-between px-20 text-light z-50
         transition-colors duration-300 ease-in-out
-        ${isScrolled ? 'bg-dark backdrop-blur-lg' : ''}
+        ${isScrolled ? 'bg-dark backdrop-blur-md' : ''}
       `}
     >
-      {/* O resto do seu código permanece exatamente o mesmo */}
       <img src="/logo.png" alt="Adec Transporte Executivo Logo" className=" p-5 w-auto" />
 
       <div className='flex items-center gap-8'>
