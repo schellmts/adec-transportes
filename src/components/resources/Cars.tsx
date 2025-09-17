@@ -7,7 +7,7 @@ export default function Cars() {
   const data = cars;
 
   return (
-    <div className='w-full text-dark'>
+    <div className='w-full text-dark' id='cars'>
       <div className='w-1/2'>
         <h2 className='text-5xl font-semibold pb-5'>Nossa Frota</h2>
         <p className='pb-5'>

@@ -5,10 +5,9 @@ import { useState, useEffect } from 'react';
 export default function Navbar() {
   const navLinks = [
     { name: 'HOME', href: '#' },
-    { name: 'SOBRE NÓS', href: '#' },
-    { name: 'FROTA', href: '#' },
-    { name: 'DESTINOS', href: '#' },
-    { name: 'CONTATO', href: '#' },
+    { name: 'SOBRE NÓS', href: '#about' },
+    { name: 'FROTA', href: '#cars' },
+    { name: 'CONTATO', href: '#contact' },
   ];
 
   const [isScrolled, setIsScrolled] = useState(false);

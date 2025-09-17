@@ -3,7 +3,7 @@ import Button from '../elements/Button'
 
 export default function About() {
   return (
-    <div className='w-full flex justify-between gap-20'>
+    <div className='w-full flex justify-between gap-20' id='about'>
       <div className='text-dark w-1/2'>
         <h2 className='text-5xl font-semibold pb-5'>Quem Somos</h2>
         <p className='pb-5'>ADEC Transporte Executivo.</p>
