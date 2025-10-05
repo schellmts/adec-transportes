@@ -8,20 +8,12 @@ import Choose from "@/components/resources/Choose";
 import Contact from "@/components/resources/Contact";
 import Footer from "@/components/resources/Footer";
 import Services from "@/components/resources/Services";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 export default function Home() {
   return (
     <div className="w-full font-montserrat relative">
       <CarouselHeader />
-      {/* <NavbarMobile /> */}
-      <div className="p-32 flex flex-col gap-20">
+      <div className="p-32 max-xl:p-20 flex flex-col gap-20">
         <About />
         <Services />
         <Choose />

@@ -1,6 +1,7 @@
 // Importando os ícones que vamos usar
 import { FaWhatsapp, FaCalendarAlt } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
+import {NavbarMobile} from "@/components/elements/NavbarMobile";
 
 export default function Navbar() {
   const navLinks = [
@@ -38,7 +39,7 @@ export default function Navbar() {
       <img src="/logo.png" alt="Adec Transporte Executivo Logo" className=" p-5 w-auto" />
 
       <div className='flex items-center gap-8'>
-        <ul className='hidden md:flex items-center gap-8'>
+        <ul className='hidden lg:flex items-center gap-8'>
           {navLinks.map((link) => (
             <li key={link.name}>
               <a
@@ -51,7 +52,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className='hidden md:flex items-center gap-4'>
+        <div className='hidden lg:flex items-center gap-4'>
           <a
             href="#"
             className='flex items-center gap-2 text-[#f2f2f2] bg-[#59A25C] px-4 py-2 rounded-lg hover:bg-green-600 transition-colors duration-300'
@@ -68,11 +69,9 @@ export default function Navbar() {
           </a>
         </div>
 
-        <div className='md:hidden'>
+        <div className='lg:hidden'>
           <button>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
+            <NavbarMobile />
           </button>
         </div>
       </div>
