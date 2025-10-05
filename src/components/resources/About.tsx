@@ -3,8 +3,8 @@ import Button from '../elements/Button'
 
 export default function About() {
   return (
-    <div className='w-full flex justify-between gap-20' id='about'>
-      <div className='text-dark w-1/2'>
+    <div className='w-full flex justify-between max-xl:flex-col gap-20' id='about'>
+      <div className='text-dark w-1/2 max-xl:w-full'>
         <h2 className='text-5xl font-semibold pb-5'>Quem Somos</h2>
         <p className='pb-5'>ADEC Transporte Executivo.</p>
         <p>
@@ -13,7 +13,7 @@ export default function About() {
           Entendemos que cada trajeto é importante, seja um compromisso pessoal, uma reunião de negócios, uma viagem ou uma chegada no aeroporto. Por isso nossa equipe é formada por profissionais discretos e altamente qualificados, e nossa frota é composta por veículos modernos, embarcados com tecnologia de ponta, garantindo que cada viagem com a ADEC seja sinônimo de tranquilidade e excelência. </p>
         <Button text='Faça Sua Reserva' />
       </div>
-      <div className='w-1/2 bg-about bg-no-repeat bg-cover'>
+      <div className='w-1/2 max-xl:w-full h-[100dvh] max-lg:h-[50dvh] bg-about bg-no-repeat bg-cover'>
       </div>
     </div>
   )

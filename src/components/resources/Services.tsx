@@ -27,7 +27,7 @@ export default function Services() {
 
   return (
     <div className='w-full text-dark'>
-      <div className='w-1/2'>
+      <div className='w-1/2 max-xl:w-full'>
         <h2 className='text-5xl font-semibold pb-5'>Nossos Serviços</h2>
         <p className='pb-5'>
           Com sede em Guarapuava e atendimento estendido para Curitiba e outras regiões,
@@ -35,7 +35,7 @@ export default function Services() {
           pensados para atender desde demandas corporativas até ocasiões especiais com elegância, segurança e eficiência.
         </p>
       </div>
-      <div className='grid grid-cols-4 gap-5'>
+      <div className='grid grid-cols-4 max-xl:grid-cols-2 gap-5'>
         {data.map((item, index) => (
           <div
             style={{ backgroundImage: `url(${item.background})` }}
