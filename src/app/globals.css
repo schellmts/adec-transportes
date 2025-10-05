@@ -14,3 +14,7 @@
   --background-image-about: url('/about.png');
   --font-montserrat: var(--font-montserrat), ui-sans-serif, system-ui;
 }
+
+html {
+  scroll-behavior: smooth;
+}
