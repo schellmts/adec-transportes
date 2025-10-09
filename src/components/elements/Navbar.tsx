@@ -2,6 +2,7 @@
 import { FaWhatsapp, FaCalendarAlt } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import {NavbarMobile} from "@/components/elements/NavbarMobile";
+import Image from "next/image";
 
 export default function Navbar() {
   const navLinks = [
@@ -36,8 +37,14 @@ export default function Navbar() {
         ${isScrolled ? 'bg-dark backdrop-blur-md' : ''}
       `}
     >
-      <img src="/logo.png" alt="Adec Transporte Executivo Logo" className=" p-5 w-auto" />
 
+      <Image
+          src="/logo.png"
+          alt="Adec Transporte Executivo Logo"
+          width={150}
+          height={50}
+          className="p-5 w-auto"
+      />
       <div className='flex items-center gap-8'>
         <ul className='hidden lg:flex items-center gap-8'>
           {navLinks.map((link) => (
