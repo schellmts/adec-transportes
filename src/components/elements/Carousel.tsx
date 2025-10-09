@@ -63,7 +63,7 @@ export default function Carousel() {
     useEffect(() => {
         const slideInterval = setInterval(nextSlide, 6000);
         return () => clearInterval(slideInterval);
-    }, [current]);
+    }, [nextSlide]);
 
     return (
         <div className="relative w-full h-screen overflow-hidden">
