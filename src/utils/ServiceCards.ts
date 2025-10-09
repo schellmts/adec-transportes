@@ -18,6 +18,7 @@ export const serviceCard = [
       <ul>
         <li>Frota premium</li>
         <li>Motoristas com postura profissional, e treinamento em etiqueta corporativa</li>
+        <li>Motorista fixo para diretoria</li>
         <li>Atendimento sob agendamento ou emergencial, com flexibilidade de horários</li>
         <li>Roteiros personalizados com paradas estratégicas</li>
         <li>Confidencialidade garantida</li>
@@ -35,25 +36,26 @@ export const serviceCard = [
 
       <h4>Indicado para:</h4>
       <ul>
-        <li>Transporte diário de funcionários entre casa e trabalho</li>
-        <li>Logística de deslocamento para viagens, treinamentos, feiras e reuniões externas</li>
-        <li>Monitoramento do trajeto para otimizar a viagem</li>
+        <li>Empresas que valorizam a produtividade</li>
+        <li>Transporte de executivos e funcionários</li>
+        <li>Viagens de negócios, treinamentos, feiras e reuniões externas</li>
         <li>Atendimento a clientes VIP e parceiros comerciais</li>
       </ul>
 
       <h4>Benefícios:</h4>
       <ul>
         <li>Contratos mensais com controle de quilometragem, tempo e custos</li>
+        <li>Produtividade dos colaboradores durante a viagem</li>
         <li>Frota dedicada com veículos identificados ou discretos, conforme perfil da empresa</li>
-        <li>Relatórios gerenciais para controle interno de RH ou financeiro</li>
         <li>Atendimento em horários comerciais, noturnos e fins de semana</li>
+        <li>Monitoramento do trajeto para otimizar a viagem</li>
       </ul>
     `,
     background: '/corporativo.png'
   },
   {
     id: 3,
-    title: 'Viagens Municipais e Interestaduais',
+    title: 'Viagens Intermunicipais e Interestaduais',
     body: `
       <p>As viagens intermunicipais e interestaduais são uma forma de explorar novos lugares e experiências dentro do estado ou região, ou mesmo em todo o país.</p>
       <p>Nossa equipe está preparada para atender às necessidades de transporte de passageiros que desejam viajar entre municípios ou estados, garantindo que todos sejam transportados de forma segura e confortável.</p>
@@ -62,7 +64,7 @@ export const serviceCard = [
       <ul>
         <li>Viagens a trabalho, turismo, compromissos médicos ou familiares</li>
         <li>Transporte de executivos entre filiais ou unidades industriais</li>
-        <li>Atendimento emergencial para deslocamentos urgentes</li>
+        <li>Atendimento personalizado</li>
       </ul>
 
       <h4>Benefícios:</h4>
@@ -93,6 +95,7 @@ export const serviceCard = [
         <li>Monitoramento de voos em tempo real para evitar atrasos ou esperas</li>
         <li>Identificação com placa personalizada e recepção no saguão de desembarque</li>
         <li>Assistência com bagagens e condução segura até o destino</li>
+        <li>Pontualidade</li>
       </ul>
     `,
     background: '/aeroporto.png'
@@ -168,6 +171,6 @@ export const serviceCard = [
         <li>Atendimento com sensibilidade, discrição e atenção aos detalhes</li>
       </ul>
     `,
-    background: '/casamentos.png'
+    background: '/casament.png'
   }
 ]

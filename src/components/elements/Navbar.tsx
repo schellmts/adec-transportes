@@ -61,7 +61,7 @@ export default function Navbar() {
             <span className='font-semibold'>Whatsapp</span>
           </a>
           <a
-            href="#"
+            href="#contact"
             className='flex items-center gap-2 bg-gray-200 text-dark px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors duration-300'
           >
             <FaCalendarAlt />

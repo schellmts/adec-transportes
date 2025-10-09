@@ -16,6 +16,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 
+
+
 const data = [
 ]
 
@@ -25,6 +27,14 @@ export function NavbarMobile() {
   function onClick(adjustment: number) {
     setGoal(Math.max(200, Math.min(400, goal + adjustment)))
   }
+
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
 
   return (
     <Sheet>
