@@ -8,6 +8,14 @@ import Swal from 'sweetalert2';
 import { IMaskInput } from 'react-imask';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
 
+interface ContactFormData {
+  nome: string;
+  telefone: string;
+  email: string;
+  service: string;
+  message: string;
+}
+
 const schema = yup.object().shape({
   nome: yup.string().required('Nome é obrigatório'),
   telefone: yup.string().required('Telefone é obrigatório'),
@@ -21,7 +29,7 @@ export default function Contact() {
     resolver: yupResolver(schema)
   });
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: ContactFormData) => {
     console.log('Formulário enviado:', data);
     Swal.fire({
       icon: 'success',
