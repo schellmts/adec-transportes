@@ -19,11 +19,6 @@ export default function WhyChooseUs() {
 
             return (
               <div key={item.id} className="bg-gray-800 p-6 rounded-lg flex flex-col items-center text-left">
-
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center p-3 mb-4 ${item.iconStyle}`}>
-                  <Icon className="w-full h-full" />
-                </div>
-
                 <h3 className="text-[#f2f2f2] text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-[#f2f2f2] text-sm">
                   {item.description}

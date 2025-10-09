@@ -1,124 +1,152 @@
+'use client'
+
 import React from 'react';
+import { useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import Swal from 'sweetalert2';
+import { IMaskInput } from 'react-imask';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
 
+const schema = yup.object().shape({
+  nome: yup.string().required('Nome é obrigatório'),
+  telefone: yup.string().required('Telefone é obrigatório'),
+  email: yup.string().email('Email inválido').required('Email é obrigatório'),
+  service: yup.string().required('Selecione um tipo de serviço'),
+  message: yup.string().required('Mensagem é obrigatória'),
+});
+
 export default function Contact() {
+  const { register, handleSubmit, control, formState: { errors }, reset } = useForm({
+    resolver: yupResolver(schema)
+  });
+
+  const onSubmit = (data: any) => {
+    console.log('Formulário enviado:', data);
+    Swal.fire({
+      icon: 'success',
+      title: 'Mensagem enviada!',
+      text: 'Recebemos suas informações. Em breve entraremos em contato.',
+      confirmButtonColor: '#1b3c48'
+    });
+    reset();
+  };
+
   return (
-    <div className='bg-dark p-16 md:p-32 text-[#f2f2f2]' id='contact'>
-      <div className='container mx-auto flex flex-col lg:flex-row gap-16'>
+      <div className="bg-dark p-16 md:p-32 text-[#f2f2f2]" id="contact">
+        <div className="container mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16">
 
-        <div className='w-full lg:w-1/2'>
-          <h2 className='text-5xl font-bold leading-tight mb-4'>
-            Fale com Nossos <br /> Especialistas
-          </h2>
-          <p className='text-lg mb-12'>
-            Nossa Equipe está pronta para criar a solução de transporte executivo
-            perfeita para suas necessidades específicas.
-          </p>
+          {/* Informações de contato */}
+          <div className="w-full lg:w-1/2">
+            <h2 className="text-5xl font-bold leading-tight mb-4 max-md:text-4xl">
+              Fale com Nossos <br /> Especialistas
+            </h2>
+            <p className="text-lg mb-12 max-md:text-base">
+              Nossa Equipe está pronta para criar a solução de transporte executivo
+              perfeita para suas necessidades específicas.
+            </p>
 
-          <div className='space-y-6'>
-            <div>
-              <h3 className='font-semibold text-light mb-2'>Telefones</h3>
-              <div className='flex flex-col sm:flex-row gap-x-8 gap-y-2'>
-                <a className='cursor-pointer flex items-center gap-3 text-lg hover:opacity-80 transition-opacity'>
-                  <FaWhatsapp /> +55 42 99999-9999
-                </a>
-                <a className='cursor-pointer flex items-center gap-3 text-lg hover:opacity-80 transition-opacity'>
-                  <FaWhatsapp /> +55 42 99999-9999
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-semibold text-light mb-2">Telefones</h3>
+                <div className="flex flex-col gap-2">
+                  <a className="cursor-pointer flex items-center gap-3 text-lg hover:opacity-80 transition-opacity">
+                    <FaWhatsapp /> +55 42 98874-8620 - Alexandro
+                  </a>
+                  <a className="cursor-pointer flex items-center gap-3 text-lg hover:opacity-80 transition-opacity">
+                    <FaWhatsapp /> +55 42 99958-6213 - ADEC (Exclusivo mensagens)
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="font-semibold mb-2 opacity-75">EMAIL</h3>
+                <a href="mailto:alexandrocoblinski@hotmail.com" className="flex items-center gap-3 text-lg hover:opacity-80 transition-opacity">
+                  <FaEnvelope /> alexandrocoblinski@hotmail.com
                 </a>
               </div>
-            </div>
-            <div>
-              <h3 className='font-semibold mb-2 opacity-75'>EMAIL</h3>
-              <a href="mailto:adectransportesexecutivo@gmail.com" className='flex items-center gap-3 text-lg hover:opacity-80 transition-opacity'>
-                <FaEnvelope /> adectransportesexecutivo@gmail.com
-              </a>
-            </div>
-            <div>
-              <h3 className='font-semibold mb-2 opacity-75'>ENDEREÇO</h3>
-              <p className='flex items-center gap-3 text-lg'>
-                <FaMapMarkerAlt /> Rua XV de Novembro, 43 <br /> Centro, Guarapuava, PR
-              </p>
+
+              <div>
+                <h3 className="font-semibold mb-2 opacity-75">ENDEREÇO</h3>
+                <p className="flex items-center gap-3 text-lg">
+                  <FaMapMarkerAlt /> Rua Avinida Deputado Cesar Silvestre, 2679 <br /> Morro Alto, Guarapuava, PR
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className='w-full lg:w-1/2'>
-          <div className='bg-[#1c4659] p-8 rounded-lg shadow-xl text-[#f2f2f2]'>
-            <h3 className='text-2xl font-bold mb-2'>Pronto para Viajar com Excelência?</h3>
-            <p className='mb-6 opacity-90'>Entre em contato e solicite uma cotação</p>
+          {/* Formulário */}
+          <div className="w-full lg:w-1/2">
+            <div className="bg-[#1c4659] p-8 rounded-lg shadow-xl text-[#f2f2f2]">
+              <h3 className="text-2xl font-bold mb-2">Pronto para Viajar com Excelência?</h3>
+              <p className="mb-6 opacity-90">Entre em contato e solicite uma cotação</p>
 
-            <form action="#" method="POST" className='space-y-5'>
-              {/* ... outros inputs ... */}
-              <div>
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+
                 <input
-                  type="text"
-                  name="nome-completo"
-                  id="nome-completo"
-                  placeholder="Nome completo"
-                  className='w-full bg-[#3e5965] border border-transparent rounded-md py-3 px-4 text-[#f2f2f2] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1b3c48] focus:ring-[#e0d8c3]'
+                    {...register('nome')}
+                    type="text"
+                    placeholder="Nome completo"
+                    className={`w-full bg-[#3e5965] border ${errors.nome ? 'border-red-500' : 'border-transparent'} rounded-md py-3 px-4 text-[#f2f2f2] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1b3c48] focus:ring-[#e0d8c3]`}
                 />
-              </div>
+                {errors.nome && <p className="text-red-500 text-sm">{errors.nome.message}</p>}
 
-              <div className='flex flex-col sm:flex-row gap-5'>
-                <div className='w-full sm:w-1/2'>
-                  <input
-                    type="tel"
-                    name="telefone"
-                    id="telefone"
-                    placeholder="Telefone"
-                    className='w-full bg-[#3e5965] border border-transparent rounded-md py-3 px-4 text-[#f2f2f2] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1b3c48] focus:ring-[#e0d8c3]'
+                <div className="flex flex-col sm:flex-row gap-5">
+                  <Controller
+                      name="telefone"
+                      control={control}
+                      render={({ field }) => (
+                          <IMaskInput
+                              {...field}
+                              mask="(00) 00000-0000"
+                              placeholder="Telefone"
+                              className={`w-full sm:w-1/2 bg-[#3e5965] border ${errors.telefone ? 'border-red-500' : 'border-transparent'} rounded-md py-3 px-4 text-[#f2f2f2] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1b3c48] focus:ring-[#e0d8c3]`}
+                          />
+                      )}
                   />
-                </div>
-                <div className='w-full sm:w-1/2'>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Email"
-                    className='w-full bg-[#3e5965] border border-transparent rounded-md py-3 px-4 text-[#f2f2f2] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1b3c48] focus:ring-[#e0d8c3]'
-                  />
-                </div>
-              </div>
+                  {errors.telefone && <p className="text-red-500 text-sm sm:ml-2">{errors.telefone.message}</p>}
 
-              <div>
-                {/* CORREÇÃO APLICADA AQUI */}
+                  <input
+                      {...register('email')}
+                      type="email"
+                      placeholder="Email"
+                      className={`w-full sm:w-1/2 bg-[#3e5965] border ${errors.email ? 'border-red-500' : 'border-transparent'} rounded-md py-3 px-4 text-[#f2f2f2] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1b3c48] focus:ring-[#e0d8c3]`}
+                  />
+                  {errors.email && <p className="text-red-500 text-sm sm:ml-2">{errors.email.message}</p>}
+                </div>
+
                 <select
-                  id="service-type"
-                  name="service-type"
-                  defaultValue="" // Define o valor inicial do select
-                  className='w-full bg-[#3e5965] border border-transparent rounded-md py-3 px-4 text-[#f2f2f2] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1b3c48] focus:ring-[#e0d8c3]'
+                    {...register('service')}
+                    defaultValue=""
+                    className={`w-full bg-[#3e5965] border ${errors.service ? 'border-red-500' : 'border-transparent'} rounded-md py-3 px-4 text-[#f2f2f2] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1b3c48] focus:ring-[#e0d8c3]`}
                 >
-                  {/* Adicionado value="" e removido 'selected' */}
                   <option value="" className="text-gray-400" disabled>Tipo de serviço</option>
-                  <option value="Transporte Executivo" className="text-[#f2f2f2]">Transporte Executivo</option>
-                  <option value="Viagens Corporativas" className="text-[#f2f2f2]">Viagens Corporativas</option>
-                  <option value="Transfer Aeroporto" className="text-[#f2f2f2]">Transfer Aeroporto</option>
-                  <option value="Eventos Especiais" className="text-[#f2f2f2]">Eventos Especiais</option>
+                  <option value="Transporte Executivo">Transporte Executivo</option>
+                  <option value="Viagens Corporativas">Viagens Corporativas</option>
+                  <option value="Transfer Aeroporto">Transfer Aeroporto</option>
+                  <option value="Eventos Especiais">Eventos Especiais</option>
                 </select>
-              </div>
+                {errors.service && <p className="text-red-500 text-sm">{errors.service.message}</p>}
 
-              <div>
                 <textarea
-                  name="message"
-                  id="message"
-                  rows={4}
-                  placeholder="Conte-nos sobre suas necessidades de transporte executivo..."
-                  className='w-full bg-[#3e5965] border border-transparent rounded-md py-3 px-4 text-[#f2f2f2] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1b3c48] focus:ring-[#e0d8c3]'
+                    {...register('message')}
+                    rows={4}
+                    placeholder="Conte-nos sobre suas necessidades de transporte executivo..."
+                    className={`w-full bg-[#3e5965] border ${errors.message ? 'border-red-500' : 'border-transparent'} rounded-md py-3 px-4 text-[#f2f2f2] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1b3c48] focus:ring-[#e0d8c3]`}
                 ></textarea>
-              </div>
+                {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
 
-              <div>
                 <button
-                  type="submit"
-                  className='w-full cursor-pointer bg-[#e0d8c3] text-[#1b3c48] font-bold py-4 px-6 rounded-lg hover:bg-opacity-90 transition-all duration-300'
+                    type="submit"
+                    className="w-full cursor-pointer bg-[#e0d8c3] text-[#1b3c48] font-bold py-4 px-6 rounded-lg hover:bg-opacity-90 transition-all duration-300"
                 >
                   Solicitar Cotação Personalizada
                 </button>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
+
         </div>
       </div>
-    </div>
   );
 }

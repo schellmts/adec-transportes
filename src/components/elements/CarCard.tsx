@@ -15,9 +15,7 @@ export default function CarCard({ name, tags, background }: CarProps) {
     <div className='rounded-xl shadow-lg overflow-hidden bg-gray-100'>
 
       <div className='relative flex items-center justify-center'>
-        <div className='absolute top-4 left-4 bg-slate-800 text-white text-xs font-semibold px-3 py-1 rounded-full'>
-          {tags}
-        </div>
+
 
         <img src={background} alt={name} className='w-full h-auto object-contain' />
       </div>

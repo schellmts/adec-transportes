@@ -35,7 +35,7 @@ export default function Services() {
           pensados para atender desde demandas corporativas até ocasiões especiais com elegância, segurança e eficiência.
         </p>
       </div>
-      <div className='grid grid-cols-4 max-xl:grid-cols-2 gap-5'>
+      <div className='grid grid-cols-4 max-xl:grid-cols-2 max-md:grid-cols-1 gap-5'>
         {data.map((item, index) => (
           <div
             style={{ backgroundImage: `url(${item.background})` }}
