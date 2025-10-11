@@ -32,7 +32,7 @@ export default function Navbar() {
   return (
     <nav
       className={`
-        fixed top-0 left-0 w-full flex items-center justify-between px-20 text-light z-50
+        fixed top-0 left-0 w-full flex items-center justify-between px-10 lg:px-20 text-light z-50
         transition-colors duration-300 ease-in-out
         ${isScrolled ? 'bg-dark backdrop-blur-md' : ''}
       `}
@@ -43,7 +43,7 @@ export default function Navbar() {
           alt="Adec Transporte Executivo Logo"
           width={150}
           height={50}
-          className="p-5 w-auto"
+          className="py-5 w-auto"
       />
       <div className='flex items-center gap-8'>
         <ul className='hidden lg:flex items-center gap-8'>
@@ -77,9 +77,7 @@ export default function Navbar() {
         </div>
 
         <div className='lg:hidden'>
-          <button>
             <NavbarMobile />
-          </button>
         </div>
       </div>
     </nav>
