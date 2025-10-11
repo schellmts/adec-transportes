@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="w-full font-montserrat relative">
       <CarouselHeader />
-      <div className="p-32 max-xl:p-20 flex flex-col gap-20">
+      <div className="p-32 max-xl:p-10 flex flex-col gap-20">
         <About />
         <Services />
         <Choose />

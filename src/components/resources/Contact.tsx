@@ -41,16 +41,16 @@ export default function Contact() {
   };
 
   return (
-      <div className="bg-dark p-16 md:p-32 text-[#f2f2f2]" id="contact">
-        <div className="container mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16">
+      <section className="bg-dark text-[#f2f2f2] py-16 px-6 sm:px-10 md:px-20 lg:px-32" id="contact">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
 
           {/* Informações de contato */}
-          <div className="w-full lg:w-1/2">
-            <h2 className="text-5xl font-bold leading-tight mb-4 max-md:text-4xl">
+          <div className="w-full lg:w-1/2 flex flex-col gap-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight max-md:text-4xl">
               Fale com Nossos <br /> Especialistas
             </h2>
-            <p className="text-lg mb-12 max-md:text-base">
-              Nossa Equipe está pronta para criar a solução de transporte executivo
+            <p className="text-base sm:text-lg md:text-lg leading-relaxed">
+              Nossa equipe está pronta para criar a solução de transporte executivo
               perfeita para suas necessidades específicas.
             </p>
 
@@ -58,10 +58,10 @@ export default function Contact() {
               <div>
                 <h3 className="font-semibold text-light mb-2">Telefones</h3>
                 <div className="flex flex-col gap-2">
-                  <a className="cursor-pointer flex items-center gap-3 text-lg hover:opacity-80 transition-opacity">
+                  <a className="flex items-center gap-3 text-lg hover:opacity-80 transition-opacity">
                     <FaWhatsapp /> +55 42 98874-8620 - Alexandro
                   </a>
-                  <a className="cursor-pointer flex items-center gap-3 text-lg hover:opacity-80 transition-opacity">
+                  <a className="flex items-center gap-3 text-lg hover:opacity-80 transition-opacity">
                     <FaWhatsapp /> +55 42 99958-6213 - ADEC (Exclusivo mensagens)
                   </a>
                 </div>
@@ -85,9 +85,9 @@ export default function Contact() {
 
           {/* Formulário */}
           <div className="w-full lg:w-1/2">
-            <div className="bg-[#1c4659] p-8 rounded-lg shadow-xl text-[#f2f2f2]">
-              <h3 className="text-2xl font-bold mb-2">Pronto para Viajar com Excelência?</h3>
-              <p className="mb-6 opacity-90">Entre em contato e solicite uma cotação</p>
+            <div className="bg-[#1c4659] p-6 sm:p-8 md:p-12 rounded-xl shadow-xl text-[#f2f2f2]">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-2">Pronto para Viajar com Excelência?</h3>
+              <p className="mb-6 opacity-90 text-base sm:text-lg">Entre em contato e solicite uma cotação</p>
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
 
@@ -128,7 +128,7 @@ export default function Contact() {
                     defaultValue=""
                     className={`w-full bg-[#3e5965] border ${errors.service ? 'border-red-500' : 'border-transparent'} rounded-md py-3 px-4 text-[#f2f2f2] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1b3c48] focus:ring-[#e0d8c3]`}
                 >
-                  <option value="" className="text-gray-400" disabled>Tipo de serviço</option>
+                  <option value="" disabled>Tipo de serviço</option>
                   <option value="Transporte Executivo">Transporte Executivo</option>
                   <option value="Viagens Corporativas">Viagens Corporativas</option>
                   <option value="Transfer Aeroporto">Transfer Aeroporto</option>
@@ -141,7 +141,7 @@ export default function Contact() {
                     rows={4}
                     placeholder="Conte-nos sobre suas necessidades de transporte executivo..."
                     className={`w-full bg-[#3e5965] border ${errors.message ? 'border-red-500' : 'border-transparent'} rounded-md py-3 px-4 text-[#f2f2f2] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1b3c48] focus:ring-[#e0d8c3]`}
-                ></textarea>
+                />
                 {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
 
                 <button
@@ -155,6 +155,6 @@ export default function Contact() {
           </div>
 
         </div>
-      </div>
+      </section>
   );
 }

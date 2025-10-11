@@ -7,6 +7,7 @@ type ModalProps = {
   onClose: () => void;
   children: React.ReactNode;
   title?: string;
+  className?: string;
 };
 
 export default function Modal({ isOpen, onClose, title, children }: ModalProps) {
@@ -36,8 +37,9 @@ export default function Modal({ isOpen, onClose, title, children }: ModalProps) 
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="relative w-2/3 transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                <button
+              <Dialog.Panel className="relative w-full max-w-[90vw] sm:max-w-md md:max-w-lg lg:max-w-2xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+
+              <button
                   type="button"
                   onClick={onClose}
                   className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 focus:outline-none"
