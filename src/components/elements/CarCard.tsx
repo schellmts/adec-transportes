@@ -25,7 +25,7 @@ export default function CarCard({ name, tags, background }: CarProps) {
           {name}
         </h3>
         <div className='w-full'>
-          <ButtonReserva text='Fazer Reserva' onClick={() => console.log(`Reserva para ${name}`)} />
+          <ButtonReserva text='Fazer Reserva' onClick={() => window.open('https://api.whatsapp.com/send/?phone=5542988748620&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+os+servi%C3%A7os&type=phone_number&app_absent=0')} />
         </div>
       </div>
 

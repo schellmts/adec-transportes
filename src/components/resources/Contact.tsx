@@ -7,6 +7,8 @@ import * as yup from 'yup';
 import Swal from 'sweetalert2';
 import { IMaskInput } from 'react-imask';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
+import {environment} from "../../../environments/environment";
 
 interface ContactFormData {
   nome: string;
@@ -30,15 +32,57 @@ export default function Contact() {
   });
 
   const onSubmit = (data: ContactFormData) => {
-    console.log('Formulário enviado:', data);
+    // Mostra o alerta de carregamento
     Swal.fire({
-      icon: 'success',
-      title: 'Mensagem enviada!',
-      text: 'Recebemos suas informações. Em breve entraremos em contato.',
-      confirmButtonColor: '#1b3c48'
+      title: 'Enviando mensagem...',
+      text: 'Por favor, aguarde.',
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      didOpen: () => {
+        Swal.showLoading();
+      },
     });
-    reset();
+
+    emailjs
+        .send(
+            environment.serviceId,
+            environment.templateId,
+            {
+              nome: data.nome,
+              email: data.email,
+              telefone: data.telefone,
+              service: data.service,
+              message: data.message,
+            },
+            environment.publicKey
+        )
+        .then((response) => {
+          console.log('Email enviado!', response.status, response.text);
+
+          // Fecha o carregamento e mostra sucesso
+          Swal.fire({
+            icon: 'success',
+            title: 'Mensagem enviada!',
+            text: 'Recebemos suas informações. Em breve entraremos em contato.',
+            confirmButtonColor: '#1b3c48',
+          });
+
+          reset();
+        })
+        .catch((err) => {
+          console.error('Erro ao enviar email:', err);
+
+          // Fecha o carregamento e mostra erro
+          Swal.fire({
+            icon: 'error',
+            title: 'Ops...',
+            text: 'Não foi possível enviar sua mensagem, tente novamente mais tarde.',
+            confirmButtonColor: '#1b3c48',
+          });
+        });
   };
+
+
 
   return (
       <section className="bg-dark text-[#f2f2f2] py-16 px-6 sm:px-10 md:px-20 lg:px-32" id="contact">
@@ -58,10 +102,10 @@ export default function Contact() {
               <div>
                 <h3 className="font-semibold text-light mb-2">Telefones</h3>
                 <div className="flex flex-col gap-2">
-                  <a className="flex items-center gap-3 text-lg hover:opacity-80 transition-opacity">
+                  <a target={'_blank'} href={'https://api.whatsapp.com/send/?phone=5542988748620&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+os+servi%C3%A7os&type=phone_number&app_absent=0'} className="flex items-center gap-3 text-lg hover:opacity-80 transition-opacity">
                     <FaWhatsapp /> +55 42 98874-8620 - Alexandro
                   </a>
-                  <a className="flex items-center gap-3 text-lg hover:opacity-80 transition-opacity">
+                  <a target={'_blank'} href={'https://api.whatsapp.com/send/?phone=5542999586213&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+os+servi%C3%A7os&type=phone_number&app_absent=0'} className="flex items-center gap-3 text-lg hover:opacity-80 transition-opacity">
                     <FaWhatsapp /> +55 42 99958-6213 - ADEC (Exclusivo mensagens)
                   </a>
                 </div>
