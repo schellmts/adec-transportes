@@ -37,7 +37,8 @@ export default function About() {
                 </p>
 
                 <div className="mt-6">
-                    <Button text="Faça Sua Reserva" />
+
+                    <a target={'_blank'} href={'https://wa.me/5542988748620?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os'} className="bg-dark text-[#f2f2f2] px-4 py-3 rounded-lg mt-5 cursor-pointer font-semibold" >Faça sua Reserva</a>
                 </div>
             </div>
 

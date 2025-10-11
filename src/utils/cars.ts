@@ -16,7 +16,7 @@ export const cars: Car[] = [
     id: 2,
     name: 'COROLLA CROSS HÍBRIDO',
     tags: 'Sedan Executivo',
-    background: '/cross-hibrido.png'
+    background: '/carroescuro.png'
   },
   {
     id: 3,

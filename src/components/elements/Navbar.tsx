@@ -61,7 +61,7 @@ export default function Navbar() {
 
         <div className='hidden lg:flex items-center gap-4'>
           <a
-            href="#"
+            href="https://wa.me/5542988748620?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os" target={'_blank'} rel={'noreferrer'}
             className='flex items-center gap-2 text-[#f2f2f2] bg-[#59A25C] px-4 py-2 rounded-lg hover:bg-green-600 transition-colors duration-300'
           >
             <FaWhatsapp size={20} />
