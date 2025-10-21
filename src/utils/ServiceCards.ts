@@ -78,7 +78,7 @@ export const serviceCard = [
   },
   {
     id: 4,
-    title: 'Receptivo em Aeroporto',
+    title: 'Receptivo em Aeroportos',
     body: `
       <p>Os receptivos em aeroportos são uma forma de garantir que os passageiros sejam recebidos e transportados de forma segura e eficiente.</p>
       <p>Nossa equipe está preparada para atender às necessidades de transporte de passageiros que chegam ou partem de aeroportos.</p>
@@ -93,7 +93,7 @@ export const serviceCard = [
       <h4>Benefícios:</h4>
       <ul>
         <li>Monitoramento de voos em tempo real para evitar atrasos ou esperas</li>
-        <li>Identificação com placa personalizada e recepção no saguão de desembarque</li>
+        <li>Receptivo personalizado</li>
         <li>Assistência com bagagens e condução segura até o destino</li>
         <li>Pontualidade</li>
       </ul>

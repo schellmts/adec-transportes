@@ -174,9 +174,12 @@ export default function Contact() {
                 >
                   <option value="" disabled>Tipo de serviço</option>
                   <option value="Transporte Executivo">Transporte Executivo</option>
-                  <option value="Viagens Corporativas">Viagens Corporativas</option>
-                  <option value="Transfer Aeroporto">Transfer Aeroporto</option>
-                  <option value="Eventos Especiais">Eventos Especiais</option>
+                  <option value="Transporte Corporativo">Transporte Corporativo</option>
+                  <option value="Viagens Intermunicipais e Interestaduais">Viagens Intermunicipais e Interestaduais</option>
+                  <option value="Receptivo em Aeroportos">Receptivo em Aeroportos</option>
+                  <option value="Motorista Particular">Motorista Particular</option>
+                  <option value="Congresso e Eventos">Congresso e Eventos</option>
+                  <option value="Casamentos">Casamentos</option>
                 </select>
                 {errors.service && <p className="text-red-500 text-sm">{errors.service.message}</p>}
 

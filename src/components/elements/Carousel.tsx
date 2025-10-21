@@ -8,45 +8,21 @@ const slides = [
     {
         image: '/component-1.png',
         title: 'Transporte Executivo',
-        subtitle: 'Personalizado para Você',
-        description: 'Serviço premium, seguro e confortável para clientes individuais e empresas.',
+        subtitle: '',
+        description: 'Serviço premium e personalizado para atender as necessidades de cada cliente.',
     },
     {
         image: '/component-1.png',
         title: 'Transporte Corporativo',
-        subtitle: 'Para sua Empresa',
+        subtitle: '',
         description: 'Frota dedicada e motoristas treinados para atender colaboradores e clientes VIP.',
     },
     {
         image: '/component-1.png',
-        title: 'Viagens Intermunicipais e Interestaduais',
-        subtitle: 'Explore Novos Lugares',
-        description: 'Transporte seguro e confortável entre cidades e estados, ideal para turismo ou negócios.',
-    },
-    {
-        image: '/component-1.png',
-        title: 'Receptivo em Aeroporto',
-        subtitle: 'Chegue com Conforto',
-        description: 'Monitoramento de voos e recepção personalizada no aeroporto, sem atrasos ou preocupações.',
-    },
-    {
-        image: '/component-1.png',
-        title: 'Motorista Particular',
-        subtitle: 'Discrição e Segurança',
-        description: 'Motoristas qualificados para trajetos diários, viagens corporativas ou lazer com total conforto.',
-    },
-    {
-        image: '/component-1.png',
-        title: 'Congressos e Eventos',
-        subtitle: 'Transporte Eficiente',
-        description: 'Logística otimizada para eventos, feiras e congressos, garantindo pontualidade e conforto.',
-    },
-    {
-        image: '/component-1.png',
-        title: 'Casamentos',
-        subtitle: 'Elegância e Estilo',
-        description: 'Transporte para noivos e convidados com veículos premium e motoristas com postura cerimonial.',
-    },
+        title: 'Receptivo em Aeroportos',
+        subtitle: '',
+        description: 'Recepção e suporte profissional em aeroportos garantindo um atendimento eficiente e seguro.',
+    }
 ];
 
 export default function Carousel() {
