@@ -10,7 +10,7 @@ export const serviceCard = [
       <h4>Indicado para:</h4>
       <ul>
         <li>Reuniões de negócios em diferentes cidades e estados</li>
-        <li>Traslados entre hotéis, empresas e aeroportos</li>
+        <li>Translados entre hotéis, empresas e aeroportos</li>
         <li>Visitas técnicas e comerciais com clientes ou parceiros</li>
       </ul>
 
@@ -87,7 +87,7 @@ export const serviceCard = [
       <ul>
         <li>Recepção de executivos em viagens corporativas</li>
         <li>Atendimento a turistas e convidados de eventos</li>
-        <li>Traslados para hotéis, empresas ou residências</li>
+        <li>Translados para hotéis, empresas ou residências</li>
       </ul>
 
       <h4>Benefícios:</h4>

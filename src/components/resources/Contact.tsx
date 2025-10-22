@@ -121,7 +121,7 @@ export default function Contact() {
               <div>
                 <h3 className="font-semibold mb-2 opacity-75">ENDEREÇO</h3>
                 <p className="flex items-center gap-3 text-lg">
-                  <FaMapMarkerAlt /> Rua Avinida Deputado Cesar Silvestre, 2679 <br /> Morro Alto, Guarapuava, PR
+                  <FaMapMarkerAlt /> Avenida Deputado Cesar Silvestre, 2679 <br /> Morro Alto, Guarapuava, PR
                 </p>
               </div>
             </div>
