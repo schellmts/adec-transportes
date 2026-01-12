@@ -8,6 +8,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'HOME', href: '#' },
     { name: 'SOBRE NÓS', href: '#about' },
+    { name: 'SERVIÇOS', href: '#services' },
     { name: 'FROTA', href: '#cars' },
     { name: 'CONTATO', href: '#contact' },
   ];
@@ -39,7 +40,7 @@ export default function Navbar() {
     >
 
       <Image
-          src="/logo.png"
+          src="/logonew.png"
           alt="Adec Transporte Executivo Logo"
           width={150}
           height={50}

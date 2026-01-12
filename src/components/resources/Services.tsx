@@ -21,7 +21,7 @@ export default function Services() {
   const data: ServiceItem[] = serviceCard;
 
   return (
-      <div className="w-full text-dark">
+      <div className="w-full text-dark" id="services">
         {/* Título */}
         <div className="w-1/2 max-xl:w-full mb-10">
           <h2 className="text-4xl md:text-5xl font-semibold pb-4 leading-tight">
