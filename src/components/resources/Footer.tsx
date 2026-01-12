@@ -21,6 +21,7 @@ export default function Footer() {
             <nav className="flex flex-col sm:flex-row gap-4 sm:gap-6 font-semibold text-center">
               <a href="#" className="hover:text-[#e0d8c3] transition-colors">Início</a>
               <a href="#about" className="hover:text-[#e0d8c3] transition-colors">Sobre Nós</a>
+              <a href="#services" className="hover:text-[#e0d8c3] transition-colors">Serviços</a>
               <a href="#cars" className="hover:text-[#e0d8c3] transition-colors">Frota</a>
               <a href="#contact" className="hover:text-[#e0d8c3] transition-colors">Contato</a>
             </nav>

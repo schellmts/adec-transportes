@@ -6,6 +6,7 @@ import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescri
 const navLinks = [
   { name: 'HOME', href: '#' },
   { name: 'SOBRE NÓS', href: '#about' },
+  { name: 'SERVIÇOS', href: '#services' },
   { name: 'FROTA', href: '#cars' },
   { name: 'CONTATO', href: '#contact' },
 ]
